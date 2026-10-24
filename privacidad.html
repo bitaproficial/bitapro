@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · BitaPro</title>
+<meta name="description" content="Qué datos usa BitaPro, dónde se guardan y cómo los controlas.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header><div class="contenedor">
+  <a class="marca" href="index.html">BitaPro</a>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="privacidad.html" aria-current="page">Privacidad</a>
+    <a href="terminos.html">Términos</a>
+    <a href="en/privacy.html" lang="en">English</a>
+  </nav>
+</div></header>
+
+<main class="contenedor">
+  <h1>Política de privacidad</h1>
+  <p class="fecha">Última actualización: 24 de octubre de 2026</p>
+
+  <p>Esta política explica qué datos usa la aplicación <strong>BitaPro</strong> (bitácora de obra para Android y Windows), dónde se guardan y cómo los controlas. En resumen: <strong>tus datos son tuyos</strong>. BitaPro no tiene servidores propios y no vende datos.</p>
+
+  <h2>1. Dónde se guardan tus datos</h2>
+  <ul>
+    <li><strong>En tu equipo.</strong> Todo lo que registras (proyectos, bitácora, fotos, firmas, cantidades, planos, nómina, finanzas, etc.) se guarda en el celular o PC donde lo creas. En Android la base de datos está cifrada.</li>
+    <li><strong>En tu propia nube, si tú lo activas.</strong> Si conectas tu cuenta de Google Drive u OneDrive para sincronizar o compartir, los datos se guardan en <strong>tu</strong> cuenta, en una carpeta de la app. BitaPro no tiene copia de ellos.</li>
+    <li><strong>Cifrado de punta a punta.</strong> Antes de salir de tu equipo, todo se cifra (AES-256) con una clave que solo tienen tus equipos y las personas que tú invites. Ni BitaPro, ni Google, ni Microsoft pueden leer el contenido. La clave se protege con tu contraseña de recuperación y tu código de 24 palabras; si los pierdes, nadie puede recuperar los datos cifrados.</li>
+  </ul>
+
+  <h2>2. Cuentas de Google y Microsoft</h2>
+  <p>Solo si decides conectarlas, BitaPro pide estos permisos, y los usa únicamente para guardar y sincronizar tus proyectos:</p>
+  <div class="tabla"><table>
+    <tr><th>Permiso</th><th>Para qué</th></tr>
+    <tr><td><code>drive.file</code> (Google)</td><td>Crear y leer solo los archivos y carpetas que crea la propia app (o que tú abras con ella). No ve el resto de tu Drive.</td></tr>
+    <tr><td><code>drive.appdata</code> (Google)</td><td>Una carpeta privada y oculta de la app en tu Drive, donde va tu llavero cifrado.</td></tr>
+    <tr><td><code>Files.ReadWrite.All</code> (Microsoft)</td><td>Leer y escribir los archivos de los proyectos en tu OneDrive y los que otra persona comparta contigo.</td></tr>
+    <tr><td><code>Files.ReadWrite.AppFolder</code> (Microsoft)</td><td>La carpeta privada de la app en tu OneDrive (tu llavero cifrado).</td></tr>
+    <tr><td><code>User.Read</code>, <code>offline_access</code> (Microsoft)</td><td>Saber con qué correo iniciaste sesión y mantener la sesión abierta para sincronizar.</td></tr>
+  </table></div>
+  <p>Los datos de inicio de sesión (tokens) se guardan en el almacenamiento seguro de tu equipo y nunca se envían a BitaPro.</p>
+
+  <h3>Uso de los datos de Google</h3>
+  <p>El uso y la transferencia de la información recibida de las API de Google por parte de BitaPro cumplen la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de uso limitado (Limited Use). Esos datos se usan solo para dar la función de sincronización que ves en la app; no se transfieren a terceros, no se usan para publicidad y ninguna persona los lee.</p>
+
+  <h2>3. Compartir con otras personas</h2>
+  <p>Solo el dueño de un proyecto puede invitar a otras personas, por correo, con un enlace y un PIN. El dueño decide qué módulos puede ver o editar cada una, y puede quitar el acceso en cualquier momento: desde ese momento la clave del proyecto cambia y esa persona ya no puede leer lo nuevo. Los datos compartidos quedan en la nube del dueño; los permisos los hacen cumplir Google o Microsoft.</p>
+
+  <h2>4. Asistente de IA (ObraBot)</h2>
+  <p>ObraBot es opcional y solo funciona con <strong>tu propia clave</strong> del servicio de IA (Google Gemini). Cuando lo usas, el texto de tu pregunta y los datos del proyecto que el asistente necesita para responder se envían directamente desde tu equipo a ese servicio, con tu clave, y quedan sujetos a sus condiciones. BitaPro no recibe nada. Si no configuras una clave, no se envía nada.</p>
+
+  <h2>5. Informes de errores</h2>
+  <p>Para corregir fallos, la app puede enviar informes técnicos de errores (Sentry) <strong>sin datos personales</strong>: no incluyen tu nombre, correo, nombre del equipo ni el contenido de tus proyectos. Puedes desactivarlos en Configuraciones → "Reportes de errores anónimos".</p>
+
+  <h2>6. Publicidad</h2>
+  <p>La app puede mostrar publicidad en cualquier momento, pero <strong>nunca basada en tus datos ni en tu información</strong>: ni tus proyectos, ni tus fotos, ni tu ubicación, ni nada de lo que registras se usa para elegir o personalizar anuncios. Si se incorpora un proveedor de anuncios, se usarán anuncios no personalizados y se indicará aquí cuál es.</p>
+
+  <h2>7. Permisos del equipo</h2>
+  <div class="tabla"><table>
+    <tr><th>Permiso</th><th>Para qué</th></tr>
+    <tr><td>Ubicación</td><td>Guardar el GPS de las fotos y ver tu posición en el mapa de la obra. Se queda en tus datos.</td></tr>
+    <tr><td>Cámara</td><td>Tomar fotos, hacer mediciones con la cámara y escanear el QR de una invitación.</td></tr>
+    <tr><td>Micrófono</td><td>Dictar por voz al asistente. El audio lo procesa el sistema del equipo.</td></tr>
+    <tr><td>Biometría</td><td>Bloquear la app con huella o rostro, si lo activas.</td></tr>
+    <tr><td>Notificaciones</td><td>Avisarte cuando otras personas cambian un proyecto compartido, si lo activas.</td></tr>
+    <tr><td>Internet</td><td>Sincronizar con tu nube, el asistente de IA y los mapas.</td></tr>
+  </table></div>
+
+  <h2>8. Cuánto tiempo y cómo borrar</h2>
+  <ul>
+    <li>Tus datos quedan mientras tú los conserves. El historial de cambios de un proyecto compartido se guarda en la nube del dueño.</li>
+    <li>Lo que se borra queda 30 días en la papelera y después se elimina.</li>
+    <li>Para borrar todo: elimina el proyecto ("Borrar para todos" si eres el dueño), desconecta la cuenta y borra la carpeta "BitacoraObra" de tu Drive u OneDrive; desinstalar la app borra los datos del equipo.</li>
+    <li>Puedes quitarle el acceso a BitaPro desde la configuración de seguridad de tu cuenta de Google o Microsoft.</li>
+  </ul>
+
+  <h2>9. Menores de edad</h2>
+  <p>BitaPro es una herramienta profesional para obras civiles y no está dirigida a menores de 13 años.</p>
+
+  <h2>10. Cambios a esta política</h2>
+  <p>Esta política puede cambiar en cualquier momento. Cuando cambie, <strong>se te notificará dentro de la app</strong> y la nueva versión se publicará aquí con su fecha.</p>
+
+  <h2>11. Contacto</h2>
+  <p>Para preguntas o solicitudes sobre privacidad: <a href="mailto:BitaProficial@gmail.com">BitaProficial@gmail.com</a></p>
+</main>
+
+<footer><div class="contenedor">
+  © 2026 BitaPro. Todos los derechos reservados. · <a href="index.html">Inicio</a> · <a href="terminos.html">Términos de uso</a>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+:root {
+  --fondo: #f7f8fa;
+  --tarjeta: #ffffff;
+  --texto: #1d232b;
+  --suave: #5b6673;
+  --borde: #dde2e8;
+  --acento: #1f6feb;
+  --acento-suave: #e8f0fe;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #12161c;
+    --tarjeta: #1a2028;
+    --texto: #e7ebf0;
+    --suave: #a3adb9;
+    --borde: #2b333d;
+    --acento: #6ea8fe;
+    --acento-suave: #1d2b40;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.contenedor { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+header {
+  background: var(--tarjeta);
+  border-bottom: 1px solid var(--borde);
+}
+header .contenedor {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 8px; padding-top: 14px; padding-bottom: 14px;
+}
+.marca { font-weight: 700; font-size: 20px; color: var(--texto); text-decoration: none; }
+nav a { color: var(--suave); text-decoration: none; margin-left: 14px; font-size: 15px; }
+nav a:hover, nav a[aria-current="page"] { color: var(--acento); }
+main { padding: 28px 0 48px; }
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 21px; margin: 32px 0 8px; }
+h3 { font-size: 17px; margin: 20px 0 4px; }
+p, li { color: var(--texto); }
+.lema { color: var(--suave); font-size: 18px; margin: 0 0 24px; }
+.fecha { color: var(--suave); font-size: 14px; }
+a { color: var(--acento); }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0; }
+.tarjeta {
+  background: var(--tarjeta); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 16px;
+}
+.tarjeta h3 { margin-top: 0; }
+.tarjeta p { margin: 0; color: var(--suave); font-size: 15px; }
+.destacado {
+  background: var(--acento-suave); border-radius: 12px; padding: 14px 16px; margin: 18px 0;
+}
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 15px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+th { color: var(--suave); font-weight: 600; }
+.tabla { overflow-x: auto; }
+code { font-size: 14px; background: var(--acento-suave); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+footer { border-top: 1px solid var(--borde); color: var(--suave); font-size: 14px; padding: 20px 0 32px; }
+footer a { color: var(--suave); }
