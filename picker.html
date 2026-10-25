@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BitaPro · Elegir carpetas</title>
+<style>
+  html, body { margin: 0; height: 100%; font: 16px system-ui, sans-serif; background: #f7f8fa; color: #1d232b; }
+  #estado { padding: 24px; text-align: center; }
+  @media (prefers-color-scheme: dark) { html, body { background: #12161c; color: #e7ebf0; } }
+</style>
+</head>
+<body>
+<div id="estado">Cargando el selector de Google…</div>
+<script>
+  // Página del selector de Google para la app BitaPro. No guarda ni envía
+  // nada: la app le pasa el token por JavaScript y recibe los ids elegidos.
+  var listo = false;
+  function avisar(nombre, datos) {
+    if (window.flutter_inappwebview && window.flutter_inappwebview.callHandler) {
+      window.flutter_inappwebview.callHandler(nombre, datos);
+    }
+  }
+  function cargado() {
+    gapi.load('picker', function () { listo = true; avisar('listo', ''); });
+  }
+  // La app llama: abrir(token, clave, appId, ids, titulo)
+  function abrir(token, clave, appId, ids, titulo) {
+    if (!listo) { setTimeout(function () { abrir(token, clave, appId, ids, titulo); }, 200); return; }
+    document.getElementById('estado').textContent = titulo || '';
+    var vista = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
+      .setIncludeFolders(true)
+      .setSelectFolderEnabled(true)
+      .setMimeTypes('application/vnd.google-apps.folder');
+    if (ids && ids.length) vista.setFileIds(ids.join(','));
+    var picker = new google.picker.PickerBuilder()
+      .addView(vista)
+      .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+      .enableFeature(google.picker.Feature.NAV_HIDDEN)
+      .setOAuthToken(token)
+      .setDeveloperKey(clave)
+      .setAppId(appId)
+      .setOrigin(window.location.protocol + '//' + window.location.host)
+      .setTitle(titulo || '')
+      .setCallback(function (d) {
+        var accion = d[google.picker.Response.ACTION];
+        if (accion === google.picker.Action.PICKED) {
+          var elegidos = (d[google.picker.Response.DOCUMENTS] || []).map(function (x) { return x[google.picker.Document.ID]; });
+          avisar('elegido', JSON.stringify(elegidos));
+        } else if (accion === google.picker.Action.CANCEL) {
+          avisar('cancelado', '');
+        }
+      })
+      .build();
+    picker.setVisible(true);
+  }
+</script>
+<script async defer src="https://apis.google.com/js/api.js" onload="cargado()"></script>
+</body>
+</html>
